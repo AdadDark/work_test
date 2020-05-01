@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My work</title>
+    <style>
+        /*
+Palette colors
+DarkBlue    #194977
+Blue        #2697d9
+LightBlue   #33c6f2
+DarkYellow  #ffe135
+LightYellow #fefd1b
+White       #ffffff
+DarkGreen   #109755
+LightGreen  #15ffaa
+*/
+        :root {
+            --color-primary: #606ee7;
+            --color-secondary: #fcac34;
+            --color-accent: #606ee7;
+            --color-text-dark: #333333;
+            --color-text-light: #ffffff;
+        }
+        html{
+            scroll-behavior: smooth;
+        }
+        body {
+            font-size: 16px;
+            padding: 0px;
+            margin: 0px;
+        }
+        .page-block{
+            background: var(--color-primary);
+            min-height: 100vh;
+            height:auto;
+            padding: 0px;
+            margin: 0px;
+
+        }
+        .page-block> h3{
+            margin:0px;
+            padding: 0px;
+        }
+        .short-info {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr 1.62fr;
+            grid-template-rows: 1fr 1fr auto;
+            grid-template-areas:
+                "photo name"
+                "photo about"
+                "links links";
+            overflow: hidden;
+            height: auto;
+            min-height: 100vh;
+            background: var(--color-primary);
+            color: var(--color-text-light);
+            margin: 0px;
+        }
+
+        .photo-block {
+            grid-area: photo;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 16px;
+        }
+
+        .photo-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 20%;
+            background-image: url(https://i.pinimg.com/originals/6c/4f/1e/6c4f1e150a9c20ff407aabac7e4cb0e5.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .name-block {
+            grid-area: name;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-start;
+            padding: 16px;
+            font-size: 300%;
+            color: var(--color-secondary);
+        }
+
+        .about-me-block {
+            position: relative;
+            grid-area: about;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            padding: 16px;
+            font-size: 120%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .about-me-block>p {
+            max-width: 400px;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .links-block {
+            grid-area: links;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            background: var(--color-secondary);
+        }
+
+        .links-block>a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            height: 64px;
+            width: 64px;
+            margin: 16px;
+            color: #194977;
+            background: var(--color-secondary);
+        }
+
+        .links-block>a.link-vk {
+            background:
+                url(https://brand.vkforms.ru/static/media/logo_color_198.231228dd.svg) no-repeat 50% / contain;
+        }
+.link-next{
+    display: inline-flex;
+    position: relative;
+    align-self: center;
+    background: var(--color-primary);
+    color:var(--color-secondary);
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+@import url(base.css);
+@import url(page_start.css);
+@import url(page_gallery.css);
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-size: 16px;
+    padding: 0px;
+    margin: 0px;
+}
+.page {
+    min-height: 100vh;
+    height: auto;
+    margin: 0px;
+    padding: 0px;
+}
+
+        @media (max-width: 480px) {
+            .photo-image {
+                width: 120px;
+                height: 120px;
+            }
+
+            .name-block {
+                font-size: 180%;
+                padding: 8px;
+            }
+
+            .about-me-block {
+                font-size: 100%;
+                padding: 8px;
+            }
+
+            .anchor-link {
+                margin: 8px;
+            }
+        }
+
+        @media (max-width: 310px) {
+            .photo-image {
+                width: 64px;
+                height: 64px;
+            }
+
+            .name-block {
+                font-size: 120%;
+                padding: 8px;
+            }
+
+            .about-me-block {
+                font-size: 100%;
+                padding: 8px;
+            }
+
+            .anchor-link {
+                margin: 8px;
+            }
+        }
+
+        @media (min-width: 500px) {
+            .photo-image {
+                width: 200px;
+                height: 200px;
+            }
+
+            .name-block {
+                font-size: 300%;
+                padding: 8px;
+            }
+
+            .about-me-block {
+                font-size: 200%;
+                padding: 8px;
+            }
+
+            .anchor-link {
+                margin: 8px;
+            }
+        }
+
+        #page-gallery {
+    position: relative;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 3em 0px;
+    background: #606ee7;
+}
+
+#page-gallery .card {
+    background-color: #ffffff;
+    margin: 16px;
+    border-radius: 4px;
+    padding: 8px;
+    box-shadow: 0px 2px 4px 2px #00000070;
+}
+
+#page-gallery .card .photo {
+    width: 200px;
+    height: 300px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#page-gallery .card::after {
+    content: "";
+    position: absolute;
+    display: block;
+    left: 50%;
+    top: -20px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-image: url(https://emojio.ru/images/apple-b/1f4cc.png);
+    background-position: center;
+    background-size: contain;
+}
+#page-gallery .card:nth-child(3n+1)::after { left: 55%; }
+#page-gallery .card:nth-child(3n+1) { transform: rotateZ(-1deg); }
+#page-gallery .card:nth-child(3n+2)::after { left: 45%; }
+#page-gallery .card:nth-child(3n+2) { transform: rotateZ(1deg); }
+#page-gallery .card:nth-child(3n+3)::after { left: 40%;}
+#page-gallery .card:nth-child(3n+3) { transform: rotateZ(2deg); }
+
+#page-gallery .card:nth-child(1) .photo {
+    background-image: url(https://lh3.googleusercontent.com/YFRMNL4y8p_5UnSOt30AFNKCmirtaYfMapzMZi-31HU0b-pDn3kAZ2LxY8DSotkY_klFiYCTCkG8e0Dfn3IoyVeHuDwoBHoQZPxUmi2GthYIKfVi8diDNY41ID2u69NF2Yi8QRqOVPokJj211mr40jFfBEF-b-MGGZ7QN9oLThu7-H7mPFcHP1Xbq-dJv_8jveG6s2ZHsD32KNuFD2J4-Rtzp2ds0uFCpxu-MGj9Z0eztxbQcOyxKGTh76spb1saX_5xw0WS5p49c1r5X_ulcfS-IWmNICuj-4ElrApqWTe-z3wXmCow1c1qljIUSsOgO72dBAq4wph7Kir-nr0VrrKFEZ0ChrUooWUlOpJ2CLKNesOM1FL1RwidApW4RWjZRCx2bjhzh-0N3e_S8ZOtJaLJMe2sZ0Mf3yze8GStzX_bHONmzEjBoxVzCT90lwee8oaCOdJR-oYFLLuOVvkOgBLAKZ8wp2XIYhBlPHii4F02rg2QSPGyMj2Mlj2vH7qS_v4KPZh6KlskclPjwvuyEsY3x_1FsImMtzRExt1xJ0dUhx6rPsO-d0o-fl7smYBzuz_So4vuHHh8bZ3fe4Xiw-0pGu_hdZ85Z6ilCEv68ZAfgQgWnp3cQmw19IB4Cxb6DsldPZ7teqNECliu4lTdAq-r1_-SUw1UsK6B_qJ9h5FiPugTAHNLnxjFyhXr=s625-no);
+}
+#page-gallery .card:nth-child(2) .photo {
+    background-image: url(https://lh3.googleusercontent.com/Crp2CYeLJXpjFt616RgeQk-3FGo6_i9EnP06E7anLBzXuYmQ1d7lzjgx95HSDBHTEALOrLWw_YiQxhLv2xXidAlB0seUDJbVMpp6sds7WnmoOKIRnEXSiH2yha1Oo3JVaIjJwwx4PKIRHbMOmA8LUhbHJMtVJWE3LzGmZj4fWb7C-AJfIL0A7Mvk4KiOfpjZEGNhUFsR-afzMlTIIAQyK1J1yUMXFejGrBlkW4XLe-G1MxhPgj3s4mSywHo7pLtPGYzuF8cezrqV2fkkvzhjry3zl5mVxFI_qcY4hHN0S2Zwwz61OUvqFl29lfcy7plLN5CsrlypyCqUvcdclvTmuHYj0GySD-fI4Q21TFYE5aJxLKywo0wtIa0v3DYQ6tSVLq32GFhJwU3Be4ffhfcwwccW0IPkRG63Cs76nVgS6hZ23AzdFQUoB5QHqJ6nj3LlIG-u_zh3_2P9cgSyJGecy-0Cr4N6JBLP5G0U03CnIncpPx3xoAIqM6dxRbphTmLdmLycsjrwEYOssnCb-2-hLIJJpYUt5UI8hWvmwR-_41CeKP-XXa2CgLjWo6a-OIOlGPm90TM_YynxarWBLFHUo6_CGoyz5yRndWkqxeFiOO4jXe8yQg7pP6OSyTo3SzVH4BkMMppewx0-aSuMKjhF4HVfoMVPUAgVq-yDXGTtYeFtVsKI6YgzGk2N2fz2=w593-h625-no);
+}
+#page-gallery .card:nth-child(3) .photo {
+    background-image: url(https://lh3.googleusercontent.com/-eL-FevQUgLK-mcU1lV1Si5V03u9s13hVfrrpnuz5KXMV35gyEPTW0OEmmTu_PU4AVmR2-5nZ1P8uPt7lQcLyRjMXpGjT67JFIY7CyFZ540nY4wvSGmThEo5XYmJqnWsXrPu_uRERR035Lt3GiIzhI0Qp2HgKzLBQfXzN3SW07Kqku4TNi-AAVfTFE5lCYhkpkkK5lKNnXoyObONi-SSX8jQneWbfbU0CA0p56P31B1ACO8NLFc5qe6OaySzWu7ImkgkSv8ZYC9taJBxyaw1OiLRSkXqE5wqbt1KGNLdsElc9ADO4ilqrsWqB6kTPs-uJMJCJlo47Y6ONua5n90YwjhId2bg5dlrvRaRd4VeeSIwhjD-p9qUqsiTjkk34tZZ3IrixGKpugVaaL9yd_PwhtvsJXPhoAY3r2DyKgeDzlJygBhQhuvkxlfBC50I0Dll5djcMK4OUt0uSo3aGdZcJSqGUjWq8Z6zDbSR1f29HsX-0tHzo8CUocj0_BkDEnTTlTigdoIpqV_iWdx0qmrg19d0HCX-d0ocWzPCbOCII8l3GmNgjfHaDaFG-RcWe3ndsnQnQ43qcmrTasznKlm_zKDCqOuRgeO7_U3WHUwDSSnVYh6lJWxsywsKMtAJ5on7IXj7_ITOhMlFpIzJEr-EaXD2MTmbIkYijtPvJgVHoy4lqPiW2IeNWr1rXEnl=s621-no);
+    background-position: left;
+}
+
+    </style>
+    <link rel="stylesheet" type="text/css" href="res/styles/main.css">
+</head>
+<body>
+    <div id="page1" class="short-info">
+        <div class="photo-block">
+            <div class="photo-image"></div>
+        </div>
+        <div class="name-block">
+            Энди
+        </div>
+        <div class="about-me-block">
+            <p>
+                Шутки 24/7...
+            </p>
+            <a href="#page2" class="link-next">
+            <a href="#page-gallery" class="link-next">
+                Далее
+            </a>
+        </div>
+        <div class="links-block">
+            <a href="https://vk.com/id486829788" class="link-vk"></a>
+        </div>
+    </div>
+    <div id="page-gallery" class="page-block">
+            </a>
+    <div id="page-gallery" class="page">
+        <div class="card"><div class="photo"> </div></div>
+        <div class="card"><div class="photo"></div></div>
+        <div class="card"><div class="photo"></div></div>
+        <a href="#page3" class="link-next">
+            Далее
+        </a>
+    </div>
+
+    <div id="page3" class="page-block">
+        <h3> 
+            <div id="page1" class="short-info"> 
+            <p>  
+                </p>
+                <p>
+                    Будет весло, говорили они... 
+                </p>
+                <p>
+                    Одна нога здесь, другая там...
+                </p>
+                <p> 
+                    Приключение на пару минут.
+                </p>
+                <p>
+                    Именно так я и начал заниматься программированием.
+                </p>       
+    </div>
+        </h3>
+    </div>
+</body>
+</html>
