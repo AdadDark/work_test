@@ -1,0 +1,197 @@
+:root {
+    --color-primary: #08968a;
+    --color-secondary: #fcac34;
+    --color-accent: #109755;
+    --color-text-dark: #333333;
+    --color-text-light: #ffffff;
+}
+html{
+    scroll-behavior: smooth;
+}
+body {
+    font-size: 16px;
+    padding: 0px;
+    margin: 0px;
+}
+.page-block{
+    background: var(--color-primary);
+    min-height: 100vh;
+    height:auto;
+    padding: 0px;
+    margin: 0px;
+
+}
+.page-block> h3{
+    margin:0px;
+    padding: 0px;
+}
+.short-info {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1.62fr;
+    grid-template-rows: 1fr 1fr auto;
+    grid-template-areas:
+        "photo name"
+        "photo about"
+        "links links";
+    overflow: hidden;
+    height: auto;
+    min-height: 100vh;
+    background: var(--color-primary);
+    color: var(--color-text-light);
+    margin: 0px;
+}
+
+.photo-block {
+    grid-area: photo;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 16px;
+}
+
+.photo-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 20%;
+    background-image: url(https://cs9.pikabu.ru/images/big_size_comm/2018-03_3/152082608614347585.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.name-block {
+    grid-area: name;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 16px;
+    font-size: 300%;
+    color: var(--color-secondary);
+}
+
+.about-me-block {
+    position: relative;
+    grid-area: about;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 16px;
+    font-size: 120%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.about-me-block>p {
+    max-width: 400px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.links-block {
+    grid-area: links;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background: var(--color-secondary);
+}
+
+.links-block>a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 64px;
+    width: 64px;
+    margin: 16px;
+    color: #194977;
+    background: var(--color-secondary);
+}
+
+.links-block>a.link-vk {
+    background:
+        url(https://brand.vkforms.ru/static/media/logo_color_198.231228dd.svg) no-repeat 50% / contain;
+}
+
+.links-block>a.link-facebook {
+    background:
+        url(https://en.facebookbrand.com/wp-content/uploads/2019/04/f_logo_RGB-Hex-Blue_512.png) no-repeat 50% / contain;
+}
+
+.links-block>a.link-YouTube {
+    background: url(https://mypclife.ru/wp-content/uploads/2018/02/youtube.jpg) no-repeat 50% / contain;
+}
+
+
+.link-next{
+display: inline-flex;
+position: relative;
+align-self: center;
+background: var(--color-primary);
+color:var(--color-secondary);
+padding: 8px 16px;
+text-decoration: none;
+}
+
+@media (max-width: 480px) {
+    .photo-image {
+        width: 120px;
+        height: 120px;
+    }
+
+    .name-block {
+        font-size: 180%;
+        padding: 8px;
+    }
+
+    .about-me-block {
+        font-size: 100%;
+        padding: 8px;
+    }
+
+    .anchor-link {
+        margin: 8px;
+    }
+}
+
+@media (max-width: 310px) {
+    .photo-image {
+        width: 64px;
+        height: 64px;
+    }
+
+    .name-block {
+        font-size: 120%;
+        padding: 8px;
+    }
+
+    .about-me-block {
+        font-size: 100%;
+        padding: 8px;
+    }
+
+    .anchor-link {
+        margin: 8px;
+    }
+}
+
+@media (min-width: 500px) {
+    .photo-image {
+        width: 200px;
+        height: 200px;
+    }
+
+    .name-block {
+        font-size: 300%;
+        padding: 8px;
+    }
+
+    .about-me-block {
+        font-size: 200%;
+        padding: 8px;
+    }
+
+    .anchor-link {
+        margin: 8px;
+    }
+}
